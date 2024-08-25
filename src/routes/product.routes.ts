@@ -22,24 +22,14 @@ productRouter.get("/", (_, res) => {
     );
 });
 
+productRouter.get("/:id", (req, res) => {
+    const id = req.params.id;
 
-productRouter.get("/popular", (_, res) => {
-    return res.json(
-        {
-            message: "Ini Adalah route Popular, GET",
-        }
-    );
+    return res.status(200).json({
+        message: `Ini Detail Products ${id}`,
+        data: { id: 1, name: "Book 1", price: 5000, },
+    },)
 });
-
-
-productRouter.get("/discounts", (_, res) => {
-    return res.json(
-        {
-            message: "Ini Adalah route discounts, GET",
-        }
-    );
-});
-
 
 
 

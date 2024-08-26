@@ -3,6 +3,7 @@ import { productRouter } from "./routes/product.routes";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import { bookRouter } from "./routes/book_route";
+import { authorRouter } from "./routes/author.route";
 
 
 // to read .env value
@@ -22,5 +23,6 @@ app.use(express.json());
 
 app.use("/products", productRouter);
 app.use("/books", bookRouter);
+app.use("/authors", authorRouter);
 
 app.listen(8000);
